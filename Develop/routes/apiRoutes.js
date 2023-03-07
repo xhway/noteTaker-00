@@ -21,7 +21,7 @@ router.post('/notes', (req,res) =>{
         .then(note => {
             res.json(note)
         })
-        .cath(err =>{
+        .catch(err =>{
             res.status(500).json(err)
         })
 })
@@ -30,7 +30,7 @@ router.delete('/notes/:id', (req, res) =>{
     saved 
         .removeNote(req.params.id)
         .then(()=> res.json({ok:true}))
-        .cath(err => res.status(500).json(err))
+        .catch(err => res.status(500).json(err))
 })
 
 module.exports = router;
